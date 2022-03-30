@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@400;600&family=Raleway:ital,wght@0,500;0,900;1,300;1,700&display=swap');
+:root{
+    --sm: 12px;
+    --md: 16px;
+    --lg: 18px;
+    --black: rgba(0,0,0,1);
+    --white: rgba(255,255,255,1);
+    --navy-blue: rgba(24,18,30,1);
+    --gunmetal: rgba(35,50,55,1);
+    --rusty-red: rgba(152,75,67,1);
+    --warm-yellow: rgba(234,198,122,1);
+    --khand: 'Khand', sans-serif;
+    --raleway: 'Raleway', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--khand);
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--raleway);
+}
