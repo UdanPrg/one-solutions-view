@@ -14,16 +14,18 @@
         </video>
         <div class="content-container">
             <h1 class="welcome-msg">
-                Hola, bienvenido, sabemos que quieres viajar en un {X}
+                Hola, bienvenido, sabemos que quieres viajar en un <span id="vehiculo">{X}</span>
             </h1>
             <div class="form-container">
                 <input type="text" id="fullName" placeholder="Nombre Completo" required>
                 <input type="email" id="email" placeholder="Correo Electrónico" required>
                 <input type="text" id="celPhone" placeholder="No. Celular" required>
                 <div class="input-age">
-                    <label for="rangeAge">Edad</label>
-                    <input type="range" id="rangeAge" min="18" max="100" required>
+                    <label for="rangeAge">Edad:</label>
+                    <span class="age">22</span>
+                    <input type="range" id="rangeAge" min="18" max="100" value="22" required>
                 </div>
+                <button type="submit" class="send-button">Enviar</button>
             </div>
         </div>
     </main>

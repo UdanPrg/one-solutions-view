@@ -61,47 +61,21 @@ input{
     font-weight: var(--ligther);
     text-align: center;
     font-size: var(--xxl);
-    color: transparent;
-    -webkit-animation: aparicion 0.6s cubic-bezier(0.91, 0.02, 0.31, 0.98) 0.5s both;
-            animation: aparicion 0.6s cubic-bezier(0.91, 0.02, 0.31, 0.98) 0.5s both;
+    color: var(--black);
+    text-shadow: 5px 5px 22px rgb(234 198 122 / 80%);   
 }
 
-@-webkit-keyframes aparicion {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        text-shadow: none;
-    }
-    100% {
-        -webkit-transform: translateY(-5px);
-        transform: translateY(-5px);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        text-shadow: 0 9px 0 var(--rusty-red), 0 15px 19px rgba(0, 0, 0, 0.5);
-    }
-}
-@keyframes aparicion {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        text-shadow: none;
-    }
-    100% {
-        -webkit-transform: translateY(-5px);
-        transform: translateY(-5px);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        text-shadow: 0 9px 0 var(--rusty-red), 0 15px 19px rgba(0, 0, 0, 0.5);
-    }
+.main-container .content-container .welcome-msg span#vehiculo{
+    color: var(--white);
 }
 
 /* Form styles */
 .form-container{
-    
+    width: 90%;
+    background-color: var(--warm-yellow);
+    padding: 2.5em;
+    border-radius: 7px;
+    border: 3px solid var(--gunmetal);
 }
 input{
     border: none;
@@ -110,33 +84,43 @@ input{
     border-bottom: 2px solid var(--gunmetal);
     transition: all 0.5s;
 }
-input:active,
-input:focus{
-    border-bottom: 2px solid var(--warm-yellow);
+input[type="text"],
+input[type="email"]{
+    height: 45px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+    font-size: var(--md);
+}
+input[type="text"]:active,
+input[type="text"]:focus{
+    border-bottom: 2px solid var(--rusty-red);
     transition: all 0.2s;
 }
 input::placeholder{
     color: var(--navy-blue);
     font-size: var(--md);
+    transition: all 0.35s;
 }
+input[type="text"]:focus::placeholder,
+input[type="email"]:focus::placeholder{
+    font-size: 12px;
+    transition: all 0.35s;
+}
+#email,
+#celPhone,
 #fullName{
     display: block;
     width: 100%;
-    margin-bottom: 12px;
 }
-#email,
-#celPhone{
-    display: inline-block;
-    width: 50%;
-    margin-bottom: 12px;
-}
-
 .input-age{
     display: block;
     width: 100%;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
 }
 .input-age label{
+    font-family: var(--raleway);
+}
+.input-age .age{
     font-family: var(--raleway);
 }
 #rangeAge{
@@ -169,4 +153,30 @@ input::placeholder{
     background: var(--navy-blue);
     border-radius: 3px;
     cursor: pointer;
+}
+.send-button{
+    display: block;
+    width: 100%;
+    padding: 15px 10px 10px;
+    font-size: var(--lg);
+    margin-bottom: 12px;
+    border-radius: 7px;
+    background-color: var( --navy-blue);
+    color: var( --warm-yellow);
+    cursor: pointer;
+    border: none;
+    transition: all 0.35s;
+}
+.send-button:hover{
+    background-color: var(--gunmetal);
+    letter-spacing: 3px;
+    transition: all 0.35s;
+}
+
+@media (min-width:920px) {
+    #email,
+    #celPhone{
+        display: inline-block;
+        width: calc(50% - 3px);
+    }
 }
