@@ -8,5 +8,26 @@
     <title>Document</title>
 </head>
 <body>
+    <main class="main-container">
+        <video autoplay muted loop id="video">
+            <source src="./pexels-sami-aksu-10207542.mp4" type="video/mp4"> 
+        </video>
+        <section class="content-container">
+                <h1>
+                    Hola, bienvenido, sabemos que quieres viajar en un {X}
+                </h1>
+                <div class="form-container">
+                    <form action="#">
+                        <input type="text" id="fullName" placeholder="Nombre Completo" required>
+                        <input type="email" id="email" placeholder="Correo Electrónico" required>
+                        <input type="text" id="celPhone" placeholder="No. Celular" required>
+                        <div class="input-age">
+                            <label for="rangeAge">edad</label>
+                            <input type="range" id="rangeAge" min="18" max="100" required>
+                        </div>
+                    </form>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
