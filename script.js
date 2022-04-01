@@ -15,6 +15,8 @@ rangeAge.addEventListener('input' , changeAge);
 // Submit information to console
 email.addEventListener('input', verifyEmailString)
 send.addEventListener('click', sendToConsole);
+console.log('x')
+// celPhone.addEventListener('onkeypress', phoneValidation);
 
 /**
  * # Change Age
@@ -41,6 +43,30 @@ function verifyEmailString(event) {
     }
 };
 
+/**
+ * # Phone validation
+ * 
+ * Only phone charcter accepted 
+ */
+
+// function phoneValidation(event) {
+//     var charCode = (evt.which) ? evt.which : evt.keyCode
+//     cons
+//     if ((charCode > 31 && (charCode < 48 || charCode > 57)) || charCode == 107 ) 
+//         return false;
+//     return true;
+// };
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    console.log(charCode)
+    if(charCode == 43){
+    console.log("dentro");
+        return true;
+    }else if (charCode > 31 && (charCode < 48 || charCode > 57) ) {
+        return false;
+    }
+    return true;
+}
 /** # Send Info
  * 
  * Send information to console

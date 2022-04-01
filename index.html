@@ -19,7 +19,7 @@
             <div class="form-container">
                 <input type="text" id="fullName" placeholder="Nombre Completo" required>
                 <input type="email" id="email" placeholder="Correo Electrónico" required>
-                <input type="tel" id="celPhone" pattern="[0-9.]+" placeholder="No. Celular" required>
+                <input type="tel" id="celPhone" pattern="[0-9.]+" placeholder="No. Celular" onkeypress="return isNumberKey(event)" required>
                 <div class="input-age">
                     <label for="rangeAge">Edad:</label>
                     <span id="age">22</span>
