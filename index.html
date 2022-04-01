@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Changes</title>
 </head>
 <body>
-    <main class="main-container">
+    <main id="main-container">
         <video autoplay muted loop id="video">
             <source src="./pexels-roman-odintsov-5902899.mp4" type="video/mp4"> 
         </video>
@@ -19,15 +19,20 @@
             <div class="form-container">
                 <input type="text" id="fullName" placeholder="Nombre Completo" required>
                 <input type="email" id="email" placeholder="Correo Electrónico" required>
-                <input type="text" id="celPhone" placeholder="No. Celular" required>
+                <input type="tel" id="celPhone" pattern="[0-9.]+" placeholder="No. Celular" required>
                 <div class="input-age">
                     <label for="rangeAge">Edad:</label>
-                    <span class="age">22</span>
+                    <span id="age">22</span>
                     <input type="range" id="rangeAge" min="18" max="100" value="22" required>
                 </div>
-                <button type="submit" class="send-button">Enviar</button>
+                <button type="submit" id="send-button">Enviar</button>
             </div>
         </div>
+        <div id="send-success">
+            <h2>Tu información fue enviada con éxito, estaremos en contacto contigo!</h2>
+        </div>
     </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>

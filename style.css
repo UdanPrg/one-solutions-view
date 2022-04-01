@@ -43,21 +43,21 @@ input{
     object-fit: cover;
     opacity: 0.95;
 }
-.main-container{
+#main-container{
     width: auto;
     height: 100vh;
     display: grid;
     place-items: center;
     grid-template: 20% 60% 20% / 20% 60% 20%;
 }
-.main-container .content-container{
+#main-container .content-container{
     display: inherit;
     grid-area: 2 / 2;
     z-index: 10;
     row-gap: 24px;
     place-items: center;
 }
-.main-container .content-container .welcome-msg{
+#main-container .content-container .welcome-msg{
     font-weight: var(--ligther);
     text-align: center;
     font-size: var(--xxl);
@@ -65,7 +65,7 @@ input{
     text-shadow: 5px 5px 22px rgb(234 198 122 / 80%);   
 }
 
-.main-container .content-container .welcome-msg span#vehiculo{
+#main-container .content-container .welcome-msg span#vehiculo{
     color: var(--white);
 }
 
@@ -85,6 +85,7 @@ input{
     transition: all 0.5s;
 }
 input[type="text"],
+input[type="tel"],
 input[type="email"]{
     height: 45px;
     padding-top: 15px;
@@ -92,7 +93,11 @@ input[type="email"]{
     font-size: var(--md);
 }
 input[type="text"]:active,
-input[type="text"]:focus{
+input[type="text"]:focus,
+input[type="email"]:active,
+input[type="email"]:focus,
+input[type="tel"]:active,
+input[type="tel"]:focus{
     border-bottom: 2px solid var(--rusty-red);
     transition: all 0.2s;
 }
@@ -102,6 +107,7 @@ input::placeholder{
     transition: all 0.35s;
 }
 input[type="text"]:focus::placeholder,
+input[type="tel"]:focus::placeholder,
 input[type="email"]:focus::placeholder{
     font-size: 12px;
     transition: all 0.35s;
@@ -120,7 +126,7 @@ input[type="email"]:focus::placeholder{
 .input-age label{
     font-family: var(--raleway);
 }
-.input-age .age{
+.input-age #age{
     font-family: var(--raleway);
 }
 #rangeAge{
@@ -154,7 +160,7 @@ input[type="email"]:focus::placeholder{
     border-radius: 3px;
     cursor: pointer;
 }
-.send-button{
+#send-button{
     display: block;
     width: 100%;
     padding: 15px 10px 10px;
@@ -167,12 +173,44 @@ input[type="email"]:focus::placeholder{
     border: none;
     transition: all 0.35s;
 }
-.send-button:hover{
+#send-button:hover{
     background-color: var(--gunmetal);
     letter-spacing: 3px;
     transition: all 0.35s;
 }
-
+/* span.alert{
+    color: var(--rusty-red);
+    font-size: var(--md);
+    display: block;
+    font-family: var(--raleway);
+    background-color: var(--warm-yellow);
+    margin: 8px 5px 10px;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 12;
+} */
+#send-success{
+    visibility: hidden;
+    position: absolute;
+    z-index: 12;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(139, 139, 139,0.5);
+}
+#send-success h2{
+    width: 60%;
+    height: 30vh;
+    background-color: var(--warm-yellow);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 2.5em;
+    border-radius: 7px;
+    border: 5px solid;
+}
 @media (min-width:920px) {
     #email,
     #celPhone{
