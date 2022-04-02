@@ -9,15 +9,34 @@ const rangeAge = document.getElementById("rangeAge");
 const age = document.getElementById("age");
 const send = document.getElementById("send-button");
 const sendSuccess = document.getElementById("send-success");
+const listMenu = document.getElementById("list-menu li");
+// Menu
+const element1 = document.getElementById("element1");
+const element2 = document.getElementById("element2");
+const element3 = document.getElementById("element3");
+const element4 = document.getElementById("element4");
+const element5 = document.getElementById("element5");
+const aereolinea = document.getElementById("aereolinea");
+const arrayMenu = [element1, element2, element3, element4, element5];
 
+// Default Aereolinea
+aereolinea.textContent = arrayMenu[0].textContent;
 // Change age while range input change
 rangeAge.addEventListener('input' , changeAge);
 // Submit information to console
 email.addEventListener('input', verifyEmailString)
 send.addEventListener('click', sendToConsole);
-console.log('x')
-// celPhone.addEventListener('onkeypress', phoneValidation);
 
+/**
+ * # Change text
+ *  
+ * Change text in Welcome Message
+ */
+for (let element of arrayMenu) {
+    element.addEventListener("click", function() {
+        aereolinea.textContent = element.textContent;
+    });
+}
 /**
  * # Change Age
  * 
@@ -26,13 +45,11 @@ console.log('x')
 function changeAge(e){
     age.textContent = e.target.value;
 }
-
 /**
  * # Verify Email
  * 
  * Verify Email
  */
-
 function verifyEmailString(event) {
     let campo = event.target;
     
@@ -42,23 +59,13 @@ function verifyEmailString(event) {
         verifyEmail = false;
     }
 };
-
 /**
  * # Phone validation
  * 
  * Only phone charcter accepted 
  */
-
-// function phoneValidation(event) {
-//     var charCode = (evt.which) ? evt.which : evt.keyCode
-//     cons
-//     if ((charCode > 31 && (charCode < 48 || charCode > 57)) || charCode == 107 ) 
-//         return false;
-//     return true;
-// };
 function isNumberKey(evt){
     var charCode = (evt.which) ? evt.which : evt.keyCode
-    console.log(charCode)
     if(charCode == 43){
     console.log("dentro");
         return true;
@@ -73,7 +80,6 @@ function isNumberKey(evt){
  */
 function sendToConsole(){
     var yesSend = fullName.value != ""  && verifyEmail != false && celPhone.value != "" && rangeAge.value != 0 ? true : false;
-    console.log(yesSend);
     if(yesSend != false){
         console.log("Estos son los datos del furmulario: \n" + "Nombre Completo: " + fullName.value + "\nCorreo Electrónico: " + email.value + "\nNo. Celular: " + celPhone.value + "\nEdad: " + rangeAge.value);
         sendSuccess.setAttribute('style', 'visibility: visible');
@@ -84,6 +90,7 @@ function sendToConsole(){
             celPhone.value = "";
             rangeAge.value = 22;
             age.textContent = rangeAge.value;
+            aereolinea.textContent = arrayMenu[0].textContent;
             sendSuccess.setAttribute('style', 'visibility: hidden');
         },5000);
     }else{

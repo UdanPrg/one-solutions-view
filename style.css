@@ -65,7 +65,7 @@ input{
     text-shadow: 5px 5px 22px rgb(234 198 122 / 80%);   
 }
 
-#main-container .content-container .welcome-msg span#vehiculo{
+#main-container .content-container .welcome-msg span#aereolinea{
     color: var(--white);
 }
 
@@ -211,6 +211,41 @@ input[type="email"]:focus::placeholder{
     border-radius: 7px;
     border: 5px solid;
 }
+#menu{
+    grid-area: 1 / 2 / 1 / 3;
+    width: 98%;
+    z-index: 10;
+}
+#menu ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    background-color: var(--rusty-red);
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+}
+#menu ul li{
+    padding: 10px;
+    transition: all 0.35s;
+}
+#menu ul li:nth-child(1){
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+#menu ul li:last-child{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+#menu ul li:hover{
+    background-color: var(--warm-yellow);
+    cursor: pointer;
+    transition: all 0.35s;
+    
+}
+
 @media (min-width:920px) {
     #email,
     #celPhone{
