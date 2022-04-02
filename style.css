@@ -52,7 +52,7 @@ input{
 }
 #main-container .content-container{
     display: inherit;
-    grid-area: 2 / 2;
+    grid-area: 2 / 1 / 2 / 4;
     z-index: 10;
     row-gap: 24px;
     place-items: center;
@@ -247,6 +247,9 @@ input[type="email"]:focus::placeholder{
 }
 
 @media (min-width:920px) {
+    #main-container .content-container{
+        grid-area: 2 / 2 ;
+    }
     #email,
     #celPhone{
         display: inline-block;
